@@ -140,13 +140,13 @@ const AllDoctorsList = () => {
                 <i className="ti ti-layout-list"></i>
               </Link>
             </div>
-            <a href="#/" className="btn btn-icon btn-light" title="Refresh">
+            <a href="#/" className="btn btn-icon btn-light d-inline-flex align-items-center justify-content-center" title="Refresh">
               <i className="ti ti-refresh"></i>
             </a>
-            <a href="#/" className="btn btn-icon btn-light" title="Print">
+            <a href="#/" className="btn btn-icon btn-light d-inline-flex align-items-center justify-content-center" title="Print">
               <i className="ti ti-printer"></i>
             </a>
-            <a href="#/" className="btn btn-icon btn-light" title="Download">
+            <a href="#/" className="btn btn-icon btn-light d-inline-flex align-items-center justify-content-center" title="Download">
               <i className="ti ti-cloud-download"></i>
             </a>
             <Link to="/add-doctors" className="btn btn-primary d-inline-flex align-items-center gap-2">

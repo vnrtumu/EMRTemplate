@@ -6,22 +6,20 @@ const Doctors = () => {
 
             
             <div className="d-flex align-items-center justify-content-between gap-2 mb-4 flex-wrap">
-                <div className="breadcrumb-arrow">
-                    <h4 className="mb-1">Doctors</h4>
-                    <div className="text-end">
-                        <ol className="breadcrumb m-0 py-0">
-                            <li className="breadcrumb-item"><Link to="/" className="text-decoration-none">Home</Link></li>
-                            <li className="breadcrumb-item active">Doctors</li>
-                        </ol>
-                    </div>
+                <div>
+                    <h4 className="mb-1 fw-bold">Doctors</h4>
+                    <ol className="breadcrumb m-0 py-0 mt-1">
+                        <li className="breadcrumb-item"><Link to="/" className="text-decoration-none">Home</Link></li>
+                        <li className="breadcrumb-item active">Doctors</li>
+                    </ol>
                 </div>
                 <div className="gap-2 d-flex align-items-center flex-wrap">
-                    <Link to="/doctors" className="btn btn-icon btn-white active" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Grid" data-bs-original-title="Grid View"><i className="ti ti-layout-grid"></i></Link>
-                    <Link to="/all-doctors-list" className="btn btn-icon btn-white" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="List" data-bs-original-title="List View"><i className="ti ti-layout-list"></i></Link>
-                    <a href="#/" className="btn btn-icon btn-white" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Refresh" data-bs-original-title="Refresh"><i className="ti ti-refresh"></i></a>
-                    <a href="#/" className="btn btn-icon btn-white" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Print" data-bs-original-title="Print"><i className="ti ti-printer"></i></a>
-                    <a href="#/" className="btn btn-icon btn-white" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i className="ti ti-cloud-download"></i></a>
-                    <Link to="/add-doctors" className="btn btn-primary"><i className="ti ti-square-rounded-plus me-1"></i>New Doctor</Link>
+                    <Link to="/doctors" className="btn btn-icon btn-white active d-inline-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Grid" data-bs-original-title="Grid View"><i className="ti ti-layout-grid"></i></Link>
+                    <Link to="/all-doctors-list" className="btn btn-icon btn-white d-inline-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="List" data-bs-original-title="List View"><i className="ti ti-layout-list"></i></Link>
+                    <a href="#/" className="btn btn-icon btn-white d-inline-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Refresh" data-bs-original-title="Refresh"><i className="ti ti-refresh"></i></a>
+                    <a href="#/" className="btn btn-icon btn-white d-inline-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Print" data-bs-original-title="Print"><i className="ti ti-printer"></i></a>
+                    <a href="#/" className="btn btn-icon btn-white d-inline-flex align-items-center justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i className="ti ti-cloud-download"></i></a>
+                    <Link to="/add-doctors" className="btn btn-primary d-inline-flex align-items-center gap-2"><i className="ti ti-square-rounded-plus"></i>Add New Doctor</Link>
                 </div>
             </div>
             
