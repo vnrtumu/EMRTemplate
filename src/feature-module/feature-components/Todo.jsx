@@ -34,15 +34,13 @@ const Todo = () => {
     <>
       <div className="content">
         <div className="d-flex align-items-center justify-content-between gap-2 mb-4 flex-wrap">
-          <div className="breadcrumb-arrow">
+          <div>
             <h4 className="mb-1 fw-bolder tracking-tight">Tasks & To-Do</h4>
-            <div className="text-end">
-              <ol className="breadcrumb m-0 py-0">
-                <li className="breadcrumb-item"><Link to="/" className="text-decoration-none">Home</Link></li>
-                <li className="breadcrumb-item"><span className="text-decoration-none text-muted">Applications</span></li>
-                <li className="breadcrumb-item active text-primary fw-medium">To Do</li>
-              </ol>
-            </div>
+            <ol className="breadcrumb m-0 py-0 mt-1" style={{ '--bs-breadcrumb-divider': '"/"' }}>
+              <li className="breadcrumb-item"><Link to="/" className="text-decoration-none">Home</Link></li>
+              <li className="breadcrumb-item"><span className="text-decoration-none text-muted">Applications</span></li>
+              <li className="breadcrumb-item active text-primary fw-medium">To Do</li>
+            </ol>
           </div>
           <div className="gap-2 d-flex align-items-center flex-wrap">
             <button className="btn premium-icon-btn shadow-sm" data-bs-toggle="tooltip" title="Refresh">
