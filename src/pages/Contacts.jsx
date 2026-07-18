@@ -1,784 +1,89 @@
 import { Link } from 'react-router-dom';
+import './Applications.css';
+
 const Contacts = () => {
+  const contactsData = [
+    { name: 'James Jackson', email: 'jamesjackson@example.com', img: 'avatar-21.jpg', status: 'online' },
+    { name: 'Robin Coffin', email: 'robin@example.com', img: 'avatar-22.jpg', status: 'offline' },
+    { name: 'Vincent Thornburg', email: 'vincent@example.com', img: 'avatar-23.jpg', status: 'online' },
+    { name: 'Fran Faulkner', email: 'franfaulkner@example.com', img: 'avatar-24.jpg', status: 'away' },
+    { name: 'Ernestine Waller', email: 'Waller@example.com', img: 'avatar-25.jpg', status: 'online' },
+    { name: 'Jared Adams', email: 'jaredadams@example.com', img: 'avatar-26.jpg', status: 'offline' },
+    { name: 'Reyna Pelfrey', email: 'renyapelfrey@example.com', img: 'avatar-27.jpg', status: 'online' },
+    { name: 'Rafael Lowe', email: 'rafeallowe@example.com', img: 'avatar-28.jpg', status: 'online' },
+    { name: 'Enrique Ratcliff', email: 'enrique@example.com', img: 'avatar-29.jpg', status: 'away' },
+    { name: 'Elizabeth Pegues', email: 'elizabeth@example.com', img: 'avatar-30.jpg', status: 'online' },
+    { name: 'Jenna Alford', email: 'jennaalford@example.com', img: 'avatar-31.jpg', status: 'offline' },
+    { name: 'Teresa Boggs', email: 'teresaboggs@example.com', img: 'avatar-33.jpg', status: 'online' }
+  ];
+
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'online': return '#10b981'; // success
+      case 'away': return '#f59e0b'; // warning
+      case 'offline': default: return '#94a3b8'; // slate
+    }
+  };
+
   return (
     <>
-<div className="content pb-0">
-
-            
-            <div className="d-flex align-items-center justify-content-between gap-2 mb-4 flex-wrap">
-                <div className="breadcrumb-arrow">
-                    <h4 className="mb-1">Contact</h4>
-                    <div className="text-end">
-                        <ol className="breadcrumb m-0 py-0">
-                            <li className="breadcrumb-item"><Link to="/" className="text-decoration-none">Home</Link></li>
-                            <li className="breadcrumb-item"><a href="#/" className="text-decoration-none">Applications</a></li>
-                            <li className="breadcrumb-item active">Contact</li>
-                        </ol>
-                    </div>
-                </div>
-                <div className="gap-2 d-flex align-items-center flex-wrap">
-                    <Link to="/contacts" className="btn btn-icon btn-white active" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Grid" data-bs-original-title="Grid View"><i className="ti ti-layout-grid"></i></Link>
-                    <Link to="/contact-list" className="btn btn-icon btn-white" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="List" data-bs-original-title="List View"><i className="ti ti-layout-list"></i></Link>
-                    <a href="#/" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_modal"><i className="ti ti-square-rounded-plus me-1"></i>New Contact</a>
-                </div>
+      <div className="content pb-0">
+        <div className="d-flex align-items-center justify-content-between gap-2 mb-4 flex-wrap">
+          <div className="breadcrumb-arrow">
+            <h4 className="mb-1">Contacts</h4>
+            <div className="text-end">
+              <ol className="breadcrumb m-0 py-0">
+                <li className="breadcrumb-item"><Link to="/" className="text-decoration-none">Home</Link></li>
+                <li className="breadcrumb-item"><span className="text-decoration-none text-muted">Applications</span></li>
+                <li className="breadcrumb-item active">Contacts</li>
+              </ol>
             </div>
-            
-
-            
-            <div className="row">
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-72.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">James Jackson</a></h6>
-                                    <p className="fs-13 mb-0">jamesjackson@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-63.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Robin Coffin</a></h6>
-                                    <p className="fs-13 mb-0">robin@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-58.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Vincent Thornburg</a></h6>
-                                    <p className="fs-13 mb-0">vincent@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-61.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Fran Faulkner</a></h6>
-                                    <p className="fs-13 mb-0">franfaulkner@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-60.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Ernestine Waller</a></h6>
-                                    <p className="fs-13 mb-0">Waller@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-73.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Jared Adams</a></h6>
-                                    <p className="fs-13 mb-0">jaredadams@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-66.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Reyna Pelfrey</a></h6>
-                                    <p className="fs-13 mb-0">renyapelfrey@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-65.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Rafael Lowe</a></h6>
-                                    <p className="fs-13 mb-0">rafeallowe@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-74.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Enrique Ratcliff</a></h6>
-                                    <p className="fs-13 mb-0">enrique@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-64.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Elizabeth Pegues</a></h6>
-                                    <p className="fs-13 mb-0">elizabeth@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-75.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Jenna Alford</a></h6>
-                                    <p className="fs-13 mb-0">jennaalford@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-76.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Teresa Boggs</a></h6>
-                                    <p className="fs-13 mb-0">teresaboggs@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-77.jpg" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Doris Lees</a></h6>
-                                    <p className="fs-13 mb-0">dorislees@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-78.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Michael Anderson</a></h6>
-                                    <p className="fs-13 mb-0">michael@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-62.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Jasmine</a></h6>
-                                    <p className="fs-13 mb-0">jasmine@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-79.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Barbara Reynolds</a></h6>
-                                    <p className="fs-13 mb-0">barbara@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-67.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Allen Snyder</a></h6>
-                                    <p className="fs-13 mb-0">allensnyder@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-68.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Patrick Barnes</a></h6>
-                                    <p className="fs-13 mb-0">patrick@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-83.jpg" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Lynne Paz</a></h6>
-                                    <p className="fs-13 mb-0">lynnepaz@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-80.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Jason Tapia</a></h6>
-                                    <p className="fs-13 mb-0">jansontapia@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-81.jpg" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Jaime Johnson</a></h6>
-                                    <p className="fs-13 mb-0">jaimejohnson@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-82.jpg" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Andrea Meek</a></h6>
-                                    <p className="fs-13 mb-0">andreameek@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-57.png" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Benjamin Culpepper</a></h6>
-                                    <p className="fs-13 mb-0">benjamin@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
-                    <div className="card border-0 shadow-sm">
-                        <div className="card-body">
-                            <div className="d-flex align-items-center mb-3">
-                                <a href="#/" className="avatar flex-shrink-0 me-2"><img src="/assets/img/avatars/avatar-70.jpg" alt="user" /></a>
-                                <div>
-                                    <h6 className="fs-14 fw-semibold mb-1"><a href="#/">Charlotte Howard</a></h6>
-                                    <p className="fs-13 mb-0">chaelotte@example.com</p>
-                                </div>
-                            </div>
-                            <div className="d-flex align-items-center justify-content-between">
-                                <div className="d-flex align-items-center gap-2">
-                                    <Link to="/voice-call" className="btn btn-icon btn-light"><i className="ti ti-phone-calling"></i></Link>
-                                    <Link to="/chat" className="btn btn-icon btn-light"><i className="ti ti-message-chatbot"></i></Link>
-                                    <Link to="/video-call" className="btn btn-icon btn-light"><i className="ti ti-video-plus"></i></Link>
-                                </div>
-                                <div>
-                                    <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-label="more options"><i className="ti ti-dots-vertical"></i></a>
-                                    <ul className="dropdown-menu p-2">
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-1"></i>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a href="#/" className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-1"></i>Delete</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                            </div>
-
+          </div>
+          <div className="gap-2 d-flex align-items-center flex-wrap">
+            <Link to="/contacts" className="btn btn-icon btn-white active shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Grid"><i className="ti ti-layout-grid text-primary"></i></Link>
+            <Link to="/contact-list" className="btn btn-icon btn-white shadow-sm" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="List"><i className="ti ti-layout-list"></i></Link>
+            <button className="btn btn-primary premium-btn" data-bs-toggle="modal" data-bs-target="#add_modal"><i className="ti ti-square-rounded-plus me-2"></i>New Contact</button>
+          </div>
         </div>
-        
 
-            
-    <footer className="footer text-center">
-        <p className="mb-0 text-dark"> &copy; <a href="#/" className="link-primary text-decoration-none">Dreams EMR</a> - All Rights Reserved.</p>
-    </footer>
+        <div className="row g-4">
+          {contactsData.map((contact, index) => (
+            <div className="col-xxl-3 col-xl-4 col-md-6" key={index}>
+              <div className="premium-card contact-grid-card">
+                <div className="position-relative d-inline-block">
+                  <div className="avatar">
+                    <img src={`/assets/img/avatars/${contact.img}`} className="w-100 h-100 rounded-circle object-fit-cover" alt={contact.name} />
+                  </div>
+                  <span className="contact-status-dot" style={{ backgroundColor: getStatusColor(contact.status) }}></span>
+                </div>
+                
+                <h5 className="fs-16 fw-bold mt-2 mb-1"><a href="#/" className="text-dark text-decoration-none">{contact.name}</a></h5>
+                <p className="fs-13 text-muted mb-3">{contact.email}</p>
+                
+                <div className="contact-social-links mb-4">
+                  <a href="#/"><i className="ti ti-brand-facebook"></i></a>
+                  <a href="#/"><i className="ti ti-brand-twitter"></i></a>
+                  <a href="#/"><i className="ti ti-brand-linkedin"></i></a>
+                </div>
+                
+                <div className="d-flex align-items-center justify-content-center gap-3 pt-3 border-top">
+                  <Link to="/voice-call" className="btn btn-icon btn-light rounded-circle text-primary hover-scale"><i className="ti ti-phone-calling"></i></Link>
+                  <Link to="/chat" className="btn btn-icon btn-light rounded-circle text-info hover-scale"><i className="ti ti-message-chatbot"></i></Link>
+                  <Link to="/video-call" className="btn btn-icon btn-light rounded-circle text-success hover-scale"><i className="ti ti-video-plus"></i></Link>
+                </div>
+
+                <div className="position-absolute top-0 end-0 m-3">
+                  <button className="btn btn-icon btn-sm btn-white rounded-circle shadow-sm" data-bs-toggle="dropdown"><i className="ti ti-dots-vertical"></i></button>
+                  <ul className="dropdown-menu dropdown-menu-end p-2 border-0 shadow-lg" style={{ borderRadius: '12px' }}>
+                    <li><button className="dropdown-item rounded py-2" data-bs-toggle="modal" data-bs-target="#edit_modal"><i className="ti ti-edit me-2 text-muted"></i>Edit</button></li>
+                    <li><button className="dropdown-item rounded py-2 text-danger" data-bs-toggle="modal" data-bs-target="#delete_modal"><i className="ti ti-trash me-2"></i>Delete</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

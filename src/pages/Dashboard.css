@@ -1,0 +1,235 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Dashboard Animations – CSS keyframes, scroll-reveals & hover effects
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─── Fade-in Slide Up (card entrance) ──────────────────────────────── */
+@keyframes dashFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dash-animate {
+  opacity: 0;
+  animation: dashFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* stagger delays */
+.dash-delay-1 { animation-delay: 0.05s; }
+.dash-delay-2 { animation-delay: 0.10s; }
+.dash-delay-3 { animation-delay: 0.15s; }
+.dash-delay-4 { animation-delay: 0.20s; }
+.dash-delay-5 { animation-delay: 0.25s; }
+.dash-delay-6 { animation-delay: 0.30s; }
+.dash-delay-7 { animation-delay: 0.35s; }
+.dash-delay-8 { animation-delay: 0.40s; }
+
+/* ─── Scroll-triggered reveal ───────────────────────────────────────── */
+.dash-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dash-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Card hover lift ───────────────────────────────────────────────── */
+.dash-card-hover {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dash-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* ─── Quick link card hover (icon scale + color pulse) ──────────────── */
+.dash-quick-link {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dash-quick-link:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10) !important;
+}
+.dash-quick-link .ql-icon {
+  transition: transform 0.3s ease;
+}
+.dash-quick-link:hover .ql-icon {
+  transform: scale(1.15);
+}
+
+/* ─── SVG line draw animation ───────────────────────────────────────── */
+@keyframes sparklineDraw {
+  from {
+    stroke-dashoffset: var(--line-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.sparkline-line {
+  animation: sparklineDraw 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── SVG area fade in ──────────────────────────────────────────────── */
+@keyframes areaFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.sparkline-area {
+  opacity: 0;
+  animation: areaFadeIn 0.8s ease 0.6s forwards;
+}
+
+/* ─── Bar grow animation ────────────────────────────────────────────── */
+@keyframes barGrow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.bar-animated {
+  transform-origin: bottom;
+  animation: barGrow 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: scaleY(0);
+}
+
+/* ─── Donut segment reveal ──────────────────────────────────────────── */
+@keyframes donutReveal {
+  from {
+    stroke-dashoffset: var(--circ);
+    opacity: 0.3;
+  }
+  to {
+    stroke-dashoffset: var(--target-offset);
+    opacity: 0.9;
+  }
+}
+
+.donut-segment {
+  animation: donutReveal 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Radial dot pop ────────────────────────────────────────────────── */
+@keyframes dotPop {
+  0% {
+    r: 0;
+    opacity: 0;
+  }
+  60% {
+    r: 5;
+    opacity: 1;
+  }
+  100% {
+    r: 4;
+    opacity: 1;
+  }
+}
+
+.radial-dot {
+  r: 0;
+  opacity: 0;
+  animation: dotPop 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Counter text pulse ────────────────────────────────────────────── */
+@keyframes counterPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.counter-done {
+  animation: counterPulse 0.3s ease;
+}
+
+/* ─── Tooltip for bar chart ─────────────────────────────────────────── */
+.chart-tooltip {
+  position: absolute;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+.chart-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.chart-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #1a1a2e;
+}
+
+/* ─── Table row slide-in ────────────────────────────────────────────── */
+@keyframes rowSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dash-row-animate {
+  opacity: 0;
+  animation: rowSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Icon bounce (stat card icon on hover) ─────────────────────────── */
+.stat-icon {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.dash-card-hover:hover .stat-icon {
+  transform: scale(1.12) rotate(-8deg);
+}
+
+/* ─── Download button hover ─────────────────────────────────────────── */
+.dl-btn {
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.dl-btn:hover {
+  background: #e3f2fd !important;
+  transform: scale(1.1);
+}
+
+/* ─── Badge pulse for Inprogress status ─────────────────────────────── */
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.25); }
+  50%      { box-shadow: 0 0 0 6px rgba(124, 58, 237, 0); }
+}
+
+.badge-pulse {
+  animation: badgePulse 2s ease-in-out infinite;
+}

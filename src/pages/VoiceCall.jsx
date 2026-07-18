@@ -1,95 +1,87 @@
 import { Link } from 'react-router-dom';
+import './Applications.css';
+
 const VoiceCall = () => {
   return (
     <>
-<div className="content">
+      <div className="content">
+        <div className="d-flex align-items-center justify-content-between gap-2 mb-4 flex-wrap">
+          <div className="breadcrumb-arrow">
+            <h4 className="mb-1">Voice Call</h4>
+            <div className="text-end">
+              <ol className="breadcrumb m-0 py-0">
+                <li className="breadcrumb-item">
+                  <Link to="/" className="text-decoration-none">Home</Link>
+                </li>
+                <li className="breadcrumb-item">
+                  <span className="text-decoration-none text-muted">Applications</span>
+                </li>
+                <li className="breadcrumb-item active">Voice Call</li>
+              </ol>
+            </div>
+          </div>
+          <button className="btn btn-primary premium-btn" data-bs-toggle="modal" data-bs-target="#add_participent">
+            <i className="ti ti-square-rounded-plus me-2"></i>Add Participant
+          </button>
+        </div>
 
-            
-            <div className="d-flex align-items-center justify-content-between gap-2 mb-4 flex-wrap">
-                <div className="breadcrumb-arrow">
-                    <h4 className="mb-1">Voice Call</h4>
-                    <div className="text-end">
-                        <ol className="breadcrumb m-0 py-0">
-                            <li className="breadcrumb-item"><Link to="/" className="text-decoration-none">Home</Link></li>
-                            <li className="breadcrumb-item"><a href="#/" className="text-decoration-none">Applications</a></li>
-                            <li className="breadcrumb-item active">Voice Call</li>
-                        </ol>
-                    </div>
-                </div>
-                <a href="#" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add_participent"><i className="ti ti-square-rounded-plus me-1"></i>Add Participant</a>
+        <div className="call-wrapper shadow-lg premium-card mb-0">
+          <div className="call-header">
+            <div className="d-flex align-items-center">
+              <span className="avatar avatar-md me-3 position-relative avatar-hover-ring">
+                <img src="/assets/img/avatars/avatar-01.jpg" alt="user" className="rounded-circle shadow-sm" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <span className="position-absolute bottom-0 end-0 p-1 bg-success border border-white rounded-circle"></span>
+              </span>
+              <div>
+                <h6 className="mb-1 text-white fs-16 fw-semibold">Edward Lietz</h6>
+                <span className="fs-13 text-white-50 d-flex align-items-center">
+                  <i className="ti ti-phone-outgoing me-1 text-success"></i> +22-555-345-11
+                </span>
+              </div>
+            </div>
+            <div>
+              <button className="btn btn-icon btn-outline-light rounded-circle border-0" data-bs-toggle="dropdown" aria-expanded="false" style={{ width: '40px', height: '40px' }}>
+                <i className="ti ti-dots-vertical"></i>
+              </button>
+              <ul className="dropdown-menu dropdown-menu-end p-2 shadow-lg border-0" style={{ borderRadius: '12px' }}>
+                <li><button className="dropdown-item rounded py-2"><i className="ti ti-user-plus me-2 text-muted"></i>Add Participant</button></li>
+                <li><button className="dropdown-item rounded py-2"><i className="ti ti-player-pause me-2 text-muted"></i>Hold Call</button></li>
+                <li><button className="dropdown-item rounded py-2"><i className="ti ti-phone-share me-2 text-muted"></i>Transfer Call</button></li>
+                <li><hr className="dropdown-divider" /></li>
+                <li><button className="dropdown-item rounded py-2 text-danger"><i className="ti ti-phone-off me-2"></i>End Call</button></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="call-body-animated flex-grow-1">
+            <div className="text-center" style={{ zIndex: 10 }}>
+              <div className="avatar call-avatar d-flex mx-auto rounded-circle mb-4" style={{ width: '150px', height: '150px', border: '4px solid rgba(255,255,255,0.2)' }}>
+                <img src="/assets/img/avatars/avatar-01.jpg" className="img-fluid rounded-circle w-100 h-100" style={{ objectFit: 'cover' }} alt="user" />
+              </div>
+              <h2 className="text-white mb-2 fw-light" style={{ fontSize: '3rem', letterSpacing: '2px' }}>01:45</h2>
+              <span className="badge bg-success text-white rounded-pill px-3 py-2 fs-12 fw-medium shadow">Call in progress...</span>
             </div>
             
+            {/* Caller PIP */}
+            <div className="pip-window d-flex align-items-center justify-content-center bg-dark">
+                <img src="/assets/img/avatars/avatar-02.jpg" alt="You" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: '0.9' }} />
+                <span className="position-absolute bottom-0 start-0 m-2 px-2 py-1 bg-dark bg-opacity-50 rounded text-white fs-12 backdrop-blur">You</span>
+            </div>
+          </div>
+          
+          <div className="call-controls">
+            <button className="call-btn"><i className="ti ti-microphone"></i></button>
+            <button className="call-btn"><i className="ti ti-video"></i></button>
+            <button className="call-btn btn-danger" style={{ transform: 'scale(1.2)', margin: '0 10px' }}><i className="ti ti-phone"></i></button>
+            <button className="call-btn"><i className="ti ti-volume"></i></button>
+            <button className="call-btn"><i className="ti ti-screen-share"></i></button>
+          </div>
+        </div> 
+      </div>
 
-            <div className="card border-0 shadow-sm voice-call mb-0">
-
-                <div className="card-body position-relative text-center d-flex flex-column">
-                    <div className="d-flex align-items-center justify-content-between mb-3">
-                        <div className="d-flex align-items-center">
-                            <span className="avatar avatar-md me-2 online avatar-rounded">
-                                <img src="/assets/img/avatars/user-01.png" alt="user" />
-                            </span>
-                            <div>
-                                <h6 className="mb-1"><a href="#">Edward Lietz</a></h6>
-                                <span className="fs-13 d-block">+22-555-345-11</span>
-                            </div>
-                        </div>
-                        <div>
-                            <a href="#/" className="btn btn-icon btn-outline-light" data-bs-toggle="dropdown" aria-expanded="false"><i className="ti ti-dots-vertical"></i></a>
-                            <ul className="dropdown-menu p-2">
-                                <li>
-                                    <a href="#/" className="dropdown-item">Add Participant</a>
-                                </li>
-                                <li>
-                                    <a href="#/" className="dropdown-item">Hold Call</a>
-                                </li>
-                                <li>
-                                    <a href="#/" className="dropdown-item">Transfer Call</a>
-                                </li>
-                                <li>
-                                    <a href="#/" className="dropdown-item">End Call</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="call-body border flex-grow-1 position-relative d-flex align-items-center justify-content-center mb-3 p-5">
-                        <img src="/assets/img/bg/call-bg-01.png" className="position-absolute top-0 end-0 rounded-top" alt="bg" />
-                        <img src="/assets/img/bg/call-bg-02.png" className="position-absolute bottom-0 start-0 rounded-bottom" alt="bg" />
-                        <div className="flex-fill text-center">
-                            <div className="animation-ripple call-avatar-outer d-flex align-items-center justify-content-center m-auto mb-4">
-                                <div className="avatar call-avatar d-flex mx-auto rounded-circle">
-                                    <img src="/assets/img/avatars/user-01.png" className="img-fluid rounded-circle" alt="user" />
-                                </div>
-                            </div>
-                            <span className="badge bg-white text-dark">01:45</span>
-                            <div className="border rounded border-2 border-primary avatar avatar-xxl d-inline-flex position-absolute end-0 bottom-0 m-4">
-                                <div className="bg-light p-1 rounded-circle d-inline-flex align-items-center justify-content-center">
-                                    <a href="#" className="avatar avatar-lg">
-                                        <img src="/assets/img/avatars/user-02.jpg" className="rounded-circle" alt="user" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="call-footer border rounded p-2">
-                        <div className="d-flex align-items-center justify-content-center flex-wrap row-gap-2">
-                            <a href="#" className="btn btn-light btn-icon me-2"><i className="ti ti-microphone fs-16"></i></a>
-                            <a href="#" className="btn btn-light btn-icon me-2"><i className="ti ti-video fs-16"></i></a>
-                            <a href="#" className="btn btn-light btn-icon me-2"><i className="ti ti-messages fs-16"></i></a>
-                            <a href="#" className="btn btn-icon p-4 btn-danger text-white me-2"><i className="ti ti-phone fs-16"></i></a>
-                            <a href="#" className="btn btn-light btn-icon me-2"><i className="ti ti-volume fs-16"></i></a>
-                            <a href="#" className="btn btn-light btn-icon me-2"><i className="ti ti-mood-smile fs-16"></i></a>
-                            <a href="#" className="btn btn-light btn-icon"><i className="ti ti-screen-share fs-16"></i></a>
-                        </div>
-                    </div>
-                </div> 
-            </div> 
-        </div>
-        
-
-            
-    <footer className="footer text-center">
-        <p className="mb-0 text-dark"> &copy; <a href="#/" className="link-primary text-decoration-none">Dreams EMR</a> - All Rights Reserved.</p>
-    </footer>
+      <footer className="footer text-center mt-4">
+        <p className="mb-0 text-dark"> &copy; <Link to="/" className="link-primary text-decoration-none">Dreams EMR</Link> - All Rights Reserved.</p>
+      </footer>
     </>
   );
 };
