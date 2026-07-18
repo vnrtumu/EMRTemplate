@@ -61,7 +61,10 @@ const Landing = () => {
               <li className="nav-item"><a className="nav-link text-white opacity-75 hover-opacity-100 fw-semibold" href="#roadmap">Roadmap</a></li>
               <li className="nav-item"><a className="nav-link text-white opacity-75 hover-opacity-100 fw-semibold" href="#qa">Launch Q&A</a></li>
             </ul>
-            <Link to="/dashboard" className="btn btn-outline-white d-inline-flex align-items-center gap-2 px-4 py-2">
+            <Link to="/login" className="btn btn-outline-white d-inline-flex align-items-center gap-2 px-4 py-2 me-2">
+              Login
+            </Link>
+            <Link to="/dashboard" className="btn btn-coral d-inline-flex align-items-center gap-2 px-4 py-2">
               Go to Dashboard <i className="ti ti-arrow-right"></i>
             </Link>
           </div>

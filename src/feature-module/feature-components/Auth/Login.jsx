@@ -1,8 +1,14 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate()
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    navigate('/dashboard')
+  }
 
   return (
     <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light" style={{ background: 'linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%)' }}>
@@ -13,7 +19,7 @@ const Login = () => {
             <h4 className="fw-bold">Welcome Back</h4>
             <p className="text-muted">Sign in to continue to DreamsEMR</p>
           </div>
-          <form onSubmit={e => e.preventDefault()}>
+          <form onSubmit={handleLogin}>
             <div className="mb-3">
               <label className="form-label fw-medium">Email</label>
               <div className="input-group">
