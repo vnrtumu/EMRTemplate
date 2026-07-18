@@ -150,13 +150,14 @@ import IconThemify from './feature-module/feature-components/IconThemify'
 import IconWeather from './feature-module/feature-components/IconWeather'
 import IconTypicon from './feature-module/feature-components/IconTypicon'
 import IconFlag from './feature-module/feature-components/IconFlag'
+import Landing from './feature-module/feature-components/Landing'
 
 function App() {
   return (
     <ThemeProvider>
     <Routes>
       <Route element={<AppLayout />}>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/patients" element={<Patients />} />
         <Route path="/patient-search" element={<PatientSearch />} />
         <Route path="/add-patient" element={<AddPatient />} />
@@ -299,6 +300,7 @@ function App() {
         <Route path="/icon-typicon" element={<IconTypicon />} />
         <Route path="/icon-flag" element={<IconFlag />} />
       </Route>
+      <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />

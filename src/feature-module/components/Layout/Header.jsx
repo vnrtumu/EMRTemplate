@@ -10,7 +10,7 @@ const Header = () => {
           <a id="mobile_btn" className="mobile-btn" href="#sidebar">
             <i className="ti ti-menu-deep fs-24"></i>
           </a>
-          <Link to="/" className="logo">
+          <Link to="/dashboard" className="logo">
             <span className="logo-light">
               <span className="logo-lg"><img src="/assets/img/logo.svg" alt="logo" /></span>
             </span>

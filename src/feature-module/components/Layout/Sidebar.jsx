@@ -46,14 +46,14 @@ const Sidebar = () => {
     <div className="sidebar" id="sidebar">
       <div className="sidebar-logo">
         <div>
-          <Link to="/" className="logo logo-normal">
+          <Link to="/dashboard" className="logo logo-normal">
             <img src="/assets/img/logo.svg" alt="Logo" />
           </Link>
-          <Link to="/" className="logo-small">
+          <Link to="/dashboard" className="logo-small">
             <img src="/assets/img/logo-small.svg" alt="Logo" />
           </Link>
-          <Link to="/" className="dark-logo">
-            <img src="/assets/img/logo-dark.svg" alt="Logo" />
+          <Link to="/dashboard" className="dark-logo">
+            <img src="/assets/img/logo-white.svg" alt="Logo" />
           </Link>
         </div>
         <button className="sidenav-toggle-btn btn border-0 p-0 active" id="toggle_btn">
