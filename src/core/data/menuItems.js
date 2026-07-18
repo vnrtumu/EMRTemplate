@@ -26,17 +26,7 @@ const menuItems = [
       { label: 'Social Feed', path: '/social-feed' }
     ]
   },
-  {
-    label: 'Layouts', icon: 'ti-layout', type: 'submenu',
-    children: [
-      { label: 'Mini', path: '/layout-mini' },
-      { label: 'Hover View', path: '/layout-hoverview' },
-      { label: 'Hidden', path: '/layout-hidden' },
-      { label: 'Full Width', path: '/layout-fullwidth' },
-      { label: 'RTL', path: '/layout-rtl' },
-      { label: 'Dark', path: '/layout-dark' },
-    ]
-  },
+
   { title: 'HEALTHCARE', type: 'menuTitle' },
   {
     label: 'Patients', icon: 'ti-users', type: 'submenu',
@@ -69,34 +59,6 @@ const menuItems = [
   { label: 'Staffs', icon: 'ti-user-star', path: '/staffs' },
   { label: 'Notifications', icon: 'ti-bell', path: '/notifications' },
   { label: 'Settings', icon: 'ti-settings', path: '/general-settings' },
-  { title: 'PAGES', type: 'menuTitle' },
-  {
-    label: 'Authentication', icon: 'ti-shield-lock', type: 'submenu',
-    children: [
-      { label: 'Login', path: '/login' },
-      { label: 'Sign Up', path: '/sign-up' },
-      { label: 'Forgot Password', path: '/forgot-password' },
-      { label: 'Change Password', path: '/change-password' },
-      { label: 'Lock Screen', path: '/lock-screen' },
-    ]
-  },
-  {
-    label: 'Error Pages', icon: 'ti-alert-triangle', type: 'submenu',
-    children: [
-      { label: 'Error 404', path: '/error-404' },
-      { label: 'Error 500', path: '/error-500' },
-    ]
-  },
-  {
-    label: 'Other Pages', icon: 'ti-file', type: 'submenu',
-    children: [
-      { label: 'Starter Page', path: '/starter-page' },
-      { label: 'Coming Soon', path: '/coming-soon' },
-      { label: 'Under Maintenance', path: '/under-maintenance' },
-      { label: 'Privacy Policy', path: '/privacy-policy' },
-      { label: 'Terms & Conditions', path: '/terms-and-conditions' },
-    ]
-  }
 ];
 
 export default menuItems;
