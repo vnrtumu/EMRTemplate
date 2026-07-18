@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import './Dashboard.css'
+import '../../style/css/Dashboard.css'
 
 /* ═══════════════════════════════════════════════════════════════════════
    Hooks

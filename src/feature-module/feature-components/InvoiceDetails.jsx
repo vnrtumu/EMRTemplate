@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Applications.css';
+import '../../style/css/Applications.css';
 
 const InvoiceDetails = () => {
   const items = [

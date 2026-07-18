@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import './Chat.css';
+import '../../style/css/Chat.css';
 
 /* ─── Shared Mock Files/Media Data ───────────────────────────────────── */
 const sharedFiles = [

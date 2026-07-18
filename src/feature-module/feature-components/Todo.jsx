@@ -71,20 +71,20 @@ const Todo = () => {
                   <div className="border-bottom pb-4 mb-4">
                     <h6 className="text-muted fw-bold text-uppercase fs-11 tracking-wide mb-3 px-2">Folders</h6>
                     <div className="nav flex-column nav-pills gap-2">
-                      <a href="#/" className="d-flex align-items-center fw-medium fs-14 text-primary bg-white shadow-sm rounded-4 p-3 active border border-primary border-opacity-25 transition-all">
+                      <a href="#/" className="text-decoration-none d-flex align-items-center fw-medium fs-14 text-primary bg-white shadow-sm rounded-4 p-3 active border border-primary border-opacity-25 transition-all">
                         <div className="d-flex align-items-center justify-content-center bg-primary-transparent rounded-circle me-3" style={{ width: '36px', height: '36px' }}>
                           <i className="ti ti-inbox fs-5"></i>
                         </div>
                         All Tasks 
                         <span className="badge bg-primary text-white rounded-pill ms-auto shadow-sm">7</span>
                       </a>
-                      <a href="#/" className="d-flex align-items-center fw-medium fs-14 rounded-4 p-3 text-secondary hover-bg-white transition-all">
+                      <a href="#/" className="text-decoration-none d-flex align-items-center fw-medium fs-14 rounded-4 p-3 text-secondary hover-bg-white transition-all">
                         <div className="d-flex align-items-center justify-content-center bg-warning-transparent rounded-circle me-3" style={{ width: '36px', height: '36px' }}>
                           <i className="ti ti-star fs-5 text-warning"></i>
                         </div>
                         Starred
                       </a>
-                      <a href="#/" className="d-flex align-items-center fw-medium fs-14 rounded-4 p-3 text-secondary hover-bg-white transition-all">
+                      <a href="#/" className="text-decoration-none d-flex align-items-center fw-medium fs-14 rounded-4 p-3 text-secondary hover-bg-white transition-all">
                         <div className="d-flex align-items-center justify-content-center bg-danger-transparent rounded-circle me-3" style={{ width: '36px', height: '36px' }}>
                           <i className="ti ti-trash fs-5 text-danger"></i>
                         </div>
@@ -96,15 +96,15 @@ const Todo = () => {
                   <div className="px-2">
                     <h6 className="text-muted fw-bold text-uppercase fs-11 tracking-wide mb-3">Priority Labels</h6>
                     <div className="d-flex flex-column gap-2">
-                      <a href="#/" className="d-flex align-items-center fw-medium text-secondary p-2 rounded-3 hover-bg-white transition-all">
+                      <a href="#/" className="text-decoration-none d-flex align-items-center fw-medium text-secondary p-2 rounded-3 hover-bg-white transition-all">
                         <span className="bg-success rounded-circle me-3" style={{ width: '10px', height: '10px', boxShadow: '0 0 0 4px rgba(34,204,98,0.2)' }}></span>
                         Low Priority
                       </a>
-                      <a href="#/" className="d-flex align-items-center fw-medium text-secondary p-2 rounded-3 hover-bg-white transition-all">
+                      <a href="#/" className="text-decoration-none d-flex align-items-center fw-medium text-secondary p-2 rounded-3 hover-bg-white transition-all">
                         <span className="bg-warning rounded-circle me-3" style={{ width: '10px', height: '10px', boxShadow: '0 0 0 4px rgba(255,193,7,0.2)' }}></span>
                         Medium Priority
                       </a>
-                      <a href="#/" className="d-flex align-items-center fw-medium text-secondary p-2 rounded-3 hover-bg-white transition-all">
+                      <a href="#/" className="text-decoration-none d-flex align-items-center fw-medium text-secondary p-2 rounded-3 hover-bg-white transition-all">
                         <span className="bg-danger rounded-circle me-3" style={{ width: '10px', height: '10px', boxShadow: '0 0 0 4px rgba(239,71,111,0.2)' }}></span>
                         High Priority
                       </a>
@@ -138,7 +138,7 @@ const Todo = () => {
                         <input type="text" className="form-control border-0 bg-transparent shadow-none p-0 fs-14" placeholder="Search tasks..." />
                       </div>
                       <div className="dropdown">
-                        <a href="#/" className="dropdown-toggle btn btn-white d-inline-flex align-items-center shadow-sm rounded-pill px-4 py-2 fw-medium border" data-bs-toggle="dropdown">
+                        <a href="#/" className="text-decoration-none dropdown-toggle btn btn-white d-inline-flex align-items-center shadow-sm rounded-pill px-4 py-2 fw-medium border" data-bs-toggle="dropdown">
                           <i className="ti ti-sort-descending-2 me-2 text-primary fs-5"></i> Newest First
                         </a>
                       </div>

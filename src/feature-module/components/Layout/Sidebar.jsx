@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import menuItems from '../../data/menuItems';
+import menuItems from '../../../core/data/menuItems';
 
 const Sidebar = () => {
   const location = useLocation();
